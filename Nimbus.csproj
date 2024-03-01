@@ -15,7 +15,7 @@
 
   <PropertyGroup>
     <ResonitePath Condition="Exists('C:\Program Files (x86)\Steam\steamapps\common\Resonite\')">C:\Program Files (x86)\Steam\steamapps\common\Resonite\</ResonitePath>
-		<ResonitePath Condition="Exists('$(HOME)/.steam/steam/steamapps/common/Resonite/')">$(HOME)/.steam/steam/steamapps/common/Resonite/</ResonitePath>
+		<ResonitePath Condition="Exists('/home/steam/resonite-headless/')">/home/steam/resonite-headless/</ResonitePath>
 		<ResonitePath Condition="Exists('R:\SteamLibrary\steamapps\common\Resonite\')">R:\SteamLibrary\steamapps\common\Resonite\</ResonitePath>
     <HeadlessPath>$(ResonitePath)Headless\</HeadlessPath>
     <ManagedPath Condition="'$(DefineConstants)' == 'HEADLESS_PRESENT'">$(HeadlessPath)</ManagedPath>
@@ -42,9 +42,6 @@
     </Reference>
     <Reference Include="Elements.Assets">
       <HintPath>$(ManagedPath)Elements.Assets.dll</HintPath>
-    </Reference>
-    <Reference Include="ArtfullySimple">
-      <HintPath>$(ResonitePath)rml_libs\ArtfullySimple.dll</HintPath>
     </Reference>
     <Reference Include="HeadlessClient">
       <HintPath>$(HeadlessPath)Resonite.exe</HintPath>
